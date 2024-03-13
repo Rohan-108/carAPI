@@ -20,5 +20,5 @@ export const carModel = model<carType>("Car", carSchema);
 
 //server actions on user model
 
-export const getAllCars = () => carModel.find();
+export const getAllCars = () => carModel.find().sort({ createdAt: -1 });
 export const deleteCar = (id: string) => carModel.findOneAndDelete({ _id: id });
